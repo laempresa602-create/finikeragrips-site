@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finikera Grips — Cachas & Fundas Premium</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">FINIKERA<span class="nav__logo-accent">GRIPS</span></div>
+    <ul class="nav__links">
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#modelos">Modelos</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="https://instagram.com/finikeragrips" target="_blank" class="nav__cta">@finikeragrips</a>
+  </nav>
+
+  <!-- HERO — cinematic scroll scrub -->
+  <section class="hero-stage" id="hero">
+    <div class="hero-sticky">
+      <canvas id="hero-canvas" class="hero-canvas"></canvas>
+      <div class="hero-overlay hero-overlay--centered">
+        <img src="assets/logo.png" alt="Finikera Grips" class="hero-logo reveal-line" data-in="0.0" data-out="0.5" />
+        <p class="hero-desc reveal-line" data-in="0.08" data-out="0.55">Artesanía de alto nivel para las mejores pistolas.<br/>Cada pieza, una obra.</p>
+        <div class="hero-actions reveal-line" data-in="0.12" data-out="0.6">
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="btn btn--gold">Ver Catálogo</a>
+          <a href="#modelos" class="btn btn--outline">Modelos Disponibles</a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>SCROLL</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE TICKER -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>CACHAS DIAMANTADAS</span><span class="ticker__dot">✦</span>
+      <span>COLT 1911</span><span class="ticker__dot">✦</span>
+      <span>HI-POWER BROWNING</span><span class="ticker__dot">✦</span>
+      <span>ARTESANÍA PREMIUM</span><span class="ticker__dot">✦</span>
+      <span>CACHAS PERLA</span><span class="ticker__dot">✦</span>
+      <span>DISEÑOS CUSTOM</span><span class="ticker__dot">✦</span>
+      <span>ENVÍOS A TODO USA</span><span class="ticker__dot">✦</span>
+      <span>CACHAS DIAMANTADAS</span><span class="ticker__dot">✦</span>
+      <span>COLT 1911</span><span class="ticker__dot">✦</span>
+      <span>HI-POWER BROWNING</span><span class="ticker__dot">✦</span>
+      <span>ARTESANÍA PREMIUM</span><span class="ticker__dot">✦</span>
+      <span>CACHAS PERLA</span><span class="ticker__dot">✦</span>
+      <span>DISEÑOS CUSTOM</span><span class="ticker__dot">✦</span>
+      <span>ENVÍOS A TODO USA</span><span class="ticker__dot">✦</span>
+    </div>
+  </div>
+
+  <!-- BRAND STATEMENT -->
+  <section class="statement" id="productos">
+    <div class="statement__inner">
+      <p class="statement__kicker">NUESTRA FILOSOFÍA</p>
+      <h2 class="statement__text">
+        Agradecemos que nos elijan<br/>entre tantas opciones.<br/>
+        <em>La mejor calidad.<br/>El mejor servicio.</em>
+      </h2>
+      <div class="statement__stats">
+        <div class="stat">
+          <span class="stat__num">14K<span class="stat__plus">+</span></span>
+          <span class="stat__label">Seguidores</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">77<span class="stat__plus">+</span></span>
+          <span class="stat__label">Publicaciones</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">USA</span>
+          <span class="stat__label">Envíos Nacionales</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">∞</span>
+          <span class="stat__label">Modelos Personalizados</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS CATALOG -->
+  <section class="products" id="modelos">
+    <div class="products__header">
+      <p class="section-kicker">CATÁLOGO</p>
+      <h2 class="section-title">ORGANIZA<br/><span class="accent">TU BÚSQUEDA</span></h2>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <div class="filter-mode">
+        <button class="filter-mode__btn active" data-mode="modelo">Por Modelo</button>
+        <button class="filter-mode__btn" data-mode="color">Por Color</button>
+      </div>
+
+      <div class="filter-chips" id="filter-chips-modelo">
+        <button class="chip active" data-filter="*">Todos</button>
+        <button class="chip" data-filter="colt1911">Colt 1911</button>
+        <button class="chip" data-filter="hipower">Hi-Power Browning</button>
+      </div>
+
+      <div class="filter-chips hidden" id="filter-chips-color">
+        <button class="chip active" data-filter="*">Todos</button>
+        <button class="chip color-chip" data-filter="negro"><span class="chip__swatch" style="background:#1a1a1a"></span>Negro</button>
+        <button class="chip color-chip" data-filter="blanco"><span class="chip__swatch" style="background:#e8e8e8;border:1px solid #444"></span>Blanco Perla</button>
+        <button class="chip color-chip" data-filter="azul"><span class="chip__swatch" style="background:#1a3a6e"></span>Azul Perla</button>
+        <button class="chip color-chip" data-filter="rojo"><span class="chip__swatch" style="background:#8b0000"></span>Rojo</button>
+        <button class="chip color-chip" data-filter="verde"><span class="chip__swatch" style="background:#2d5a27"></span>Verde</button>
+        <button class="chip color-chip" data-filter="cafe"><span class="chip__swatch" style="background:#5c3317"></span>Café</button>
+        <button class="chip color-chip" data-filter="dorado"><span class="chip__swatch" style="background:#c9a227"></span>Dorado</button>
+        <button class="chip color-chip" data-filter="plateado"><span class="chip__swatch" style="background:#a8a8a8"></span>Plateado</button>
+        <button class="chip color-chip" data-filter="madera"><span class="chip__swatch" style="background:#7b4a1e"></span>Madera</button>
+      </div>
+    </div>
+
+    <!-- RESULTS COUNT -->
+    <div class="filter-count"><span id="filter-count-num">29</span> productos</div>
+
+    <!-- PRODUCT GRID -->
+    <div class="products__grid" id="products-grid">
+
+      <!-- COLT 1911 -->
+      <div class="product-card product-card--featured" data-modelo="colt1911" data-color="azul">
+        <div class="product-card__bg" style="background:url('assets/gp01.jpg') center/cover"></div>
+        <div class="product-card__shine"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">AZUL PERLA<br/>POTRO PLATA</h3>
+          <p class="product-card__desc">Acabado perla azul con potro en chapa color plata para 1911</p>
+          <div class="product-card__meta"><span class="meta-color azul"></span> Azul Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp02.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO PERLA<br/>POTRO DORADO</h3>
+          <p class="product-card__desc">Acabado perla negra con potro en chapa color oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="rojo">
+        <div class="product-card__bg" style="background:url('assets/gp03.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">ROJO PERLA<br/>POTRO DORADO</h3>
+          <p class="product-card__desc">Acabado rojo rubí con potro en chapa color oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color rojo"></span> Rojo Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="blanco">
+        <div class="product-card__bg" style="background:url('assets/gp08.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">BLANCO PERLA<br/>VIRGEN DORADA</h3>
+          <p class="product-card__desc">Acabado perla blanca con medalla de la Virgen María en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color blanco"></span> Blanco Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="dorado">
+        <div class="product-card__bg" style="background:url('assets/gp09.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">DIAMANTADO<br/>POTRO DORADO</h3>
+          <p class="product-card__desc">Cachas diamantadas en chapa de oro con potro dorado para 1911</p>
+          <div class="product-card__meta"><span class="meta-color dorado"></span> Dorado Diamantado</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp10.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO MÁRMOL<br/>POTRO DORADO</h3>
+          <p class="product-card__desc">Acabado mármol negro con medallón potro en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro Mármol</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp11.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO MÁRMOL<br/>DIAMANTADO PLATA</h3>
+          <p class="product-card__desc">Acabado mármol negro con medallón diamantado en plata para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro Mármol</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp12.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO PERLA<br/>SAN JUDITAS PLATA</h3>
+          <p class="product-card__desc">Acabado perla negra con San Juditas en chapa color plata para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="blanco">
+        <div class="product-card__bg" style="background:url('assets/gp13.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">BLANCO PERLA<br/>SAN JUDITAS PLATA</h3>
+          <p class="product-card__desc">Acabado perla blanca con San Juditas en chapa color plata para 1911</p>
+          <div class="product-card__meta"><span class="meta-color blanco"></span> Blanco Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="madera">
+        <div class="product-card__bg" style="background:url('assets/gp14.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">MADERA NATURAL<br/>POTRO PLATA</h3>
+          <p class="product-card__desc">Cachas en madera natural diamantada con potro en chapa plata para 1911</p>
+          <div class="product-card__meta"><span class="meta-color madera"></span> Madera Natural</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="verde">
+        <div class="product-card__bg" style="background:url('assets/gp21.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">VERDE FILIGRANA<br/>SAN JUDAS DORADO</h3>
+          <p class="product-card__desc">Cachas verde esmeralda con filigrana y San Judas en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color verde"></span> Verde Filigrana</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="blanco">
+        <div class="product-card__bg" style="background:url('assets/gp22.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">BLANCO GRABADO<br/>GALLO DORADO</h3>
+          <p class="product-card__desc">Cachas en blanco con grabado floral y gallo en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color blanco"></span> Blanco Grabado</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp23.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO<br/>GALLO DORADO</h3>
+          <p class="product-card__desc">Cachas negras con gallo en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp24.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO PERLA<br/>CLÁSICA</h3>
+          <p class="product-card__desc">Cachas en acabado perla negra clásica con tornillos dorados para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="blanco">
+        <div class="product-card__bg" style="background:url('assets/gp25.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">HUESO CLÁSICA<br/>MEDALLÓN PLATA</h3>
+          <p class="product-card__desc">Cachas en acabado hueso/crema clásico con medallón en plata para 1911</p>
+          <div class="product-card__meta"><span class="meta-color blanco"></span> Hueso</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="cafe">
+        <div class="product-card__bg" style="background:url('assets/gp26.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">CAFÉ ÁMBAR<br/>MEDALLÓN PLATA</h3>
+          <p class="product-card__desc">Cachas en perla café ámbar con medallón en chapa plata para 1911</p>
+          <div class="product-card__meta"><span class="meta-color cafe"></span> Café Ámbar</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp27.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO PERLA<br/>ÁGUILA MEXICANA</h3>
+          <p class="product-card__desc">Acabado perla negra con Águila Mexicana en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp28.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO PERLA<br/>SAN JUDAS DORADO</h3>
+          <p class="product-card__desc">Acabado perla negra con San Judas en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp29.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO MÁRMOL<br/>ÁGUILA MEXICANA</h3>
+          <p class="product-card__desc">Acabado mármol negro con Águila Mexicana en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro Mármol</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp30.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">NEGRO MÁRMOL<br/>SAN JUDAS DORADO</h3>
+          <p class="product-card__desc">Acabado mármol negro con San Judas en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro Mármol</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="cafe">
+        <div class="product-card__bg" style="background:url('assets/gp31.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">CAFÉ PERLA<br/>ÁGUILA MEXICANA</h3>
+          <p class="product-card__desc">Acabado perla café con Águila Mexicana en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color cafe"></span> Café Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="cafe">
+        <div class="product-card__bg" style="background:url('assets/gp32.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">CAFÉ PERLA<br/>SAN JUDAS DORADO</h3>
+          <p class="product-card__desc">Acabado perla café con San Judas en chapa de oro para 1911</p>
+          <div class="product-card__meta"><span class="meta-color cafe"></span> Café Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="colt1911" data-color="blanco">
+        <div class="product-card__bg" style="background:url('assets/gp33.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">COLT 1911</span>
+          <h3 class="product-card__name">BLANCO PERLA<br/>CLÁSICA</h3>
+          <p class="product-card__desc">Cachas en acabado perla blanca clásica para 1911</p>
+          <div class="product-card__meta"><span class="meta-color blanco"></span> Blanco Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <!-- HI-POWER BROWNING -->
+      <div class="product-card product-card--featured" data-modelo="hipower" data-color="dorado">
+        <div class="product-card__bg" style="background:url('assets/gp15.jpg') center/cover"></div>
+        <div class="product-card__shine"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">HI-POWER BROWNING</span>
+          <h3 class="product-card__name">DIAMANTADO ÁMBAR<br/>SAN JUDAS PLATA</h3>
+          <p class="product-card__desc">Cachas diamantadas ámbar con San Judas en plata para Hi-Power Browning</p>
+          <div class="product-card__meta"><span class="meta-color dorado"></span> Ámbar Diamantado</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="hipower" data-color="dorado">
+        <div class="product-card__bg" style="background:url('assets/gp16.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">HI-POWER BROWNING</span>
+          <h3 class="product-card__name">DIAMANTADO ÁMBAR<br/>LOGO BROWNING PLATA</h3>
+          <p class="product-card__desc">Cachas diamantadas ámbar con logo Browning en plata para Hi-Power</p>
+          <div class="product-card__meta"><span class="meta-color dorado"></span> Ámbar Diamantado</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="hipower" data-color="dorado">
+        <div class="product-card__bg" style="background:url('assets/gp17.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">HI-POWER BROWNING</span>
+          <h3 class="product-card__name">DIAMANTADO BLANCO<br/>SAN JUDAS DORADO</h3>
+          <p class="product-card__desc">Cachas diamantadas blancas con San Judas en chapa de oro para Hi-Power</p>
+          <div class="product-card__meta"><span class="meta-color dorado"></span> Blanco Diamantado</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="hipower" data-color="dorado">
+        <div class="product-card__bg" style="background:url('assets/gp18.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">HI-POWER BROWNING</span>
+          <h3 class="product-card__name">DIAMANTADO BLANCO<br/>LOGO BROWNING DORADO</h3>
+          <p class="product-card__desc">Cachas diamantadas blancas con logo Browning en chapa de oro para Hi-Power</p>
+          <div class="product-card__meta"><span class="meta-color dorado"></span> Blanco Diamantado</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="hipower" data-color="blanco">
+        <div class="product-card__bg" style="background:url('assets/gp19.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">HI-POWER BROWNING</span>
+          <h3 class="product-card__name">BLANCO PERLA<br/>BROWNING DORADO</h3>
+          <p class="product-card__desc">Cachas en perla blanca con logo Browning en chapa de oro para Hi-Power</p>
+          <div class="product-card__meta"><span class="meta-color blanco"></span> Blanco Perla</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-modelo="hipower" data-color="negro">
+        <div class="product-card__bg" style="background:url('assets/gp20.jpg') center/cover"></div>
+        <div class="product-card__content">
+          <span class="product-card__tag">HI-POWER BROWNING</span>
+          <h3 class="product-card__name">NEGRO<br/>BROWNING DORADO</h3>
+          <p class="product-card__desc">Cachas negras con logo Browning en chapa de oro para Hi-Power</p>
+          <div class="product-card__meta"><span class="meta-color negro"></span> Negro</div>
+          <a href="https://instagram.com/finikeragrips" target="_blank" class="product-card__link">Pedir →</a>
+        </div>
+      </div>
+
+    </div><!-- /products__grid -->
+  </section>
+
+  <!-- DETAIL SCROLL SECTION (CSS 3D parallax) -->
+  <section class="reveal-stage" id="galeria">
+    <div class="reveal-sticky">
+      <div class="reveal-bg"></div>
+      <div class="grip-float" id="grip-float">
+        <div class="grip-float__shape"></div>
+        <div class="grip-float__glow"></div>
+      </div>
+      <div class="reveal-overlay">
+        <p class="section-kicker reveal-line" data-in="0.05" data-out="0.7">ARTESANÍA</p>
+        <h2 class="reveal-big-text">
+          <span class="reveal-line" data-in="0.1" data-out="0.75">CADA</span>
+          <span class="reveal-line" data-in="0.15" data-out="0.8">DETALLE</span>
+          <span class="reveal-line accent" data-in="0.2" data-out="0.85">IMPORTA</span>
+        </h2>
+        <p class="reveal-sub reveal-line" data-in="0.25" data-out="0.9">Materiales seleccionados · Acabado de precisión · Ajuste perfecto</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="process__inner">
+      <p class="section-kicker">¿CÓMO FUNCIONA?</p>
+      <h2 class="section-title">DEL DM<br/><span class="accent">A TU PUERTA</span></h2>
+      <div class="process__steps">
+        <div class="process__step">
+          <span class="process__num">01</span>
+          <h3>Elige tu modelo</h3>
+          <p>Dinos qué pistola tienes y qué estilo buscas. ¿Dudas? Te ayudamos a elegir.</p>
+        </div>
+        <div class="process__step">
+          <span class="process__num">02</span>
+          <h3>Confirmamos diseño</h3>
+          <p>Te mostramos opciones: diamantado, liso, grabado custom. Tú decides cada detalle.</p>
+        </div>
+        <div class="process__step">
+          <span class="process__num">03</span>
+          <h3>Fabricación premium</h3>
+          <p>Cada cacha se trabaja con precisión. Materiales de alta calidad, acabado perfecto.</p>
+        </div>
+        <div class="process__step">
+          <span class="process__num">04</span>
+          <h3>Envío a todo USA 🇺🇸</h3>
+          <p>Empacamos con cuidado y enviamos a cualquier estado. Tracking incluido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL / CTA -->
+  <section class="social-proof" id="contacto">
+    <div class="social-proof__inner">
+      <div class="social-proof__text">
+        <p class="section-kicker">COMUNIDAD</p>
+        <h2 class="section-title">14K+<br/><span class="accent">SEGUIDORES</span><br/>NO MIENTEN</h2>
+        <p class="social-proof__sub">Únete a nuestra comunidad en Instagram.<br/>Nuevos diseños, clientes satisfechos y más.</p>
+        <a href="https://instagram.com/finikeragrips" target="_blank" class="btn btn--gold btn--large">
+          Síguenos en Instagram
+        </a>
+      </div>
+      <div class="social-proof__grid">
+        <div class="ig-card ig-card--1"><div class="ig-card__bg"></div><div class="ig-card__inner"><span class="ig-card__label">AZUL PERLA</span></div></div>
+        <div class="ig-card ig-card--2"><div class="ig-card__bg"></div><div class="ig-card__inner"><span class="ig-card__label">DIAMANTADO</span></div></div>
+        <div class="ig-card ig-card--3"><div class="ig-card__bg"></div><div class="ig-card__inner"><span class="ig-card__label">VERDE ESMERALDA</span></div></div>
+        <div class="ig-card ig-card--4"><div class="ig-card__bg"></div><div class="ig-card__inner"><span class="ig-card__label">HI-POWER</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">FINIKERA<span>GRIPS</span></div>
+        <p>Phoenix, Arizona 📍<br/>Envíos a todo USA 🇺🇸<br/>No vendemos armas 🚫</p>
+      </div>
+      <div class="footer__links">
+        <h4>Productos</h4>
+        <ul>
+          <li>Cachas Diamantadas</li>
+          <li>Cachas Perla</li>
+          <li>Colt 1911</li>
+          <li>Hi-Power Browning</li>
+          <li>Diseños Custom</li>
+          <li>Envíos a Todo USA</li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>Contacto</h4>
+        <a href="https://instagram.com/finikeragrips" target="_blank">@finikeragrips</a>
+        <p>¿Dudas sobre tu modelo?<br/>Escríbenos por DM.<br/>Te ayudamos a elegir.</p>
+        <a href="https://finikeragrips.carrd.co" target="_blank" class="btn btn--outline btn--sm">Ver Catálogo</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Finikera Grips · Phoenix, AZ · Todos los derechos reservados</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="scroll-cinematic.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
