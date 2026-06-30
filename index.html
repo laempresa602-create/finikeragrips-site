@@ -3,7 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Finikera Grips — Cachas & Fundas Premium</title>
+  <title>Finikera Grips — Cachas & Fundas Premium para Colt 1911 y Hi-Power</title>
+  <meta name="description" content="Cachas y estuches artesanales premium para Colt 1911 y Hi-Power Browning. Diamantadas, perla y diseños custom. Hechas a mano en Phoenix, AZ. Envíos a todo USA con tracking." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://finikeragrips.github.io/" />
+
+  <!-- Open Graph / WhatsApp / Instagram share preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Finikera Grips" />
+  <meta property="og:title" content="Finikera Grips — Cachas & Fundas Premium" />
+  <meta property="og:description" content="Cachas artesanales para Colt 1911 y Hi-Power Browning. Diamantadas, perla y diseños custom. Envíos a todo USA." />
+  <meta property="og:url" content="https://finikeragrips.github.io/" />
+  <meta property="og:image" content="https://finikeragrips.github.io/assets/estuche-01.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Finikera Grips — Cachas & Fundas Premium" />
+  <meta name="twitter:description" content="Cachas artesanales para Colt 1911 y Hi-Power Browning. Envíos a todo USA." />
+  <meta name="twitter:image" content="https://finikeragrips.github.io/assets/estuche-01.jpg" />
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
@@ -572,6 +588,39 @@
     </div>
   </section>
 
+  <!-- TRUST / PAYMENT -->
+  <section class="trust">
+    <div class="trust__inner">
+      <p class="section-kicker">COMPRA CON CONFIANZA</p>
+      <div class="trust__grid">
+        <div class="trust__item">
+          <span class="trust__icon">🛠️</span>
+          <h3>Hecho a mano</h3>
+          <p>Cada pieza trabajada con precisión en Phoenix, AZ.</p>
+        </div>
+        <div class="trust__item">
+          <span class="trust__icon">📦</span>
+          <h3>Envío a todo USA</h3>
+          <p>Empaque seguro y número de tracking en cada pedido.</p>
+        </div>
+        <div class="trust__item">
+          <span class="trust__icon">🎨</span>
+          <h3>100% personalizado</h3>
+          <p>Tú eliges modelo, color y grabado. Diseños custom.</p>
+        </div>
+        <div class="trust__item">
+          <span class="trust__icon">💬</span>
+          <h3>Asesoría directa</h3>
+          <p>Te ayudamos a elegir el modelo correcto para tu arma.</p>
+        </div>
+      </div>
+      <div class="trust__pay">
+        <span class="trust__pay-label">FORMAS DE PAGO</span>
+        <span class="trust__pay-methods">Zelle · CashApp · Venmo · Apple Pay</span>
+      </div>
+    </div>
+  </section>
+
   <!-- SOCIAL / CTA -->
   <section class="social-proof" id="contacto">
     <div class="social-proof__inner">
@@ -618,7 +667,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© 2025 Finikera Grips · Phoenix, AZ · Todos los derechos reservados</span>
+      <span>© 2026 Finikera Grips · Phoenix, AZ · Todos los derechos reservados</span>
     </div>
   </footer>
 
@@ -699,6 +748,54 @@
         if (e.key === 'Escape') closeLightbox();
         else if (e.key === 'ArrowLeft') go(-1);
         else if (e.key === 'ArrowRight') go(1);
+      });
+    })();
+  </script>
+
+  <!-- Floating "order" button + per-product ordering via Instagram DM -->
+  <a href="https://ig.me/m/finikeragrips" target="_blank" rel="noopener" class="order-fab" aria-label="Pedir por Instagram">
+    <span class="order-fab__icon">💬</span>
+    <span class="order-fab__text">Pedir</span>
+  </a>
+  <div id="order-toast" class="order-toast" role="status" aria-live="polite"></div>
+  <script>
+    (function() {
+      var IG_DM = 'https://ig.me/m/finikeragrips';
+      var toast = document.getElementById('order-toast');
+      var toastTimer;
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 3500);
+      }
+      function modelName(card) {
+        var el = card.querySelector('.product-card__name');
+        var name = el ? el.textContent.replace(/\s+/g, ' ').trim() : 'un modelo';
+        var tagEl = card.querySelector('.product-card__tag');
+        var tag = tagEl ? tagEl.textContent.replace(/\s+/g, ' ').trim() : '';
+        return tag ? (tag + ' — ' + name) : name;
+      }
+      document.querySelectorAll('#products-grid .product-card').forEach(function(card) {
+        var content = card.querySelector('.product-card__content');
+        if (!content || content.querySelector('.product-card__order')) return;
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'product-card__order';
+        btn.textContent = 'Pedir este modelo';
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var name = modelName(card);
+          var msg = 'Hola Finikera Grips 👋 Me interesa este modelo: «' + name + '». ¿Precio y disponibilidad?';
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(msg).then(function(){
+              showToast('Mensaje copiado ✓ Pégalo en el chat de Instagram');
+            }).catch(function(){ /* clipboard blocked — still opens DM */ });
+          }
+          window.open(IG_DM, '_blank', 'noopener');
+        });
+        content.appendChild(btn);
       });
     })();
   </script>
